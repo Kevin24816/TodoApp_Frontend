@@ -27,8 +27,8 @@ angular.module('internApp', ['ui.bootstrap', 'ngRoute'])
 })
 
 .factory('apiService', ['authService', '$http', function(authService, $http) {
-	// var baseURL = "https://todoapp248.herokuapp.com/";
-    var baseURL = "http://TodoApp.test"; // local testing url
+	var baseURL = "https://todoapp248.herokuapp.com/";
+    // var baseURL = "http://TodoApp.test"; // local testing url
 
 	var apiService = {
 		username: localStorage.getItem("username"),
