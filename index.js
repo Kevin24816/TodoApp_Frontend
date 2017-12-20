@@ -1,4 +1,6 @@
 angular.module('internApp', ['ui.bootstrap', 'ngRoute'])
+
+// Deals with token authorization
 .factory('authService', function() {
 	var authService = {
 
@@ -23,11 +25,14 @@ angular.module('internApp', ['ui.bootstrap', 'ngRoute'])
 
 	return authService;
 })
+
 .factory('apiService', ['authService', '$http', function(authService, $http) {
-	var baseURL = "https://todoapp248.herokuapp.com/";
-    // var baseURL = "http://TodoApp.test"; // local testing url
+	// var baseURL = "https://todoapp248.herokuapp.com/";
+    var baseURL = "http://TodoApp.test"; // local testing url
 
 	var apiService = {
+		username: localStorage.getItem("username"),
+
 		//  No auth
 		authenticate: function(data, successHandler, errorHandler) {
 			$http({
@@ -35,6 +40,8 @@ angular.module('internApp', ['ui.bootstrap', 'ngRoute'])
 				url: baseURL + "/auth",
 				data: data
 			}).then(function(response) {
+                localStorage.setItem("username", response.data.username);
+
 				authService.setToken(response.data.token);
 				successHandler(response);
 			}, function(response) {
@@ -49,6 +56,8 @@ angular.module('internApp', ['ui.bootstrap', 'ngRoute'])
 				url: baseURL + "/users",
 				data: data
 			}).then(function(response) {
+                localStorage.setItem("username", response.data.username);
+
 				authService.setToken(response.data.token);
 				successHandler(response)
 			}, function(response) {
@@ -93,7 +102,7 @@ angular.module('internApp', ['ui.bootstrap', 'ngRoute'])
 				method: 'POST',
 				url: baseURL + "/notes",
 				data: noteData,
-				headers: authService.generateHeader(),
+				headers: authService.generateHeader()
 			}).then(function(response) {
 				successHandler(response)
 			}, function(response) {
@@ -150,6 +159,8 @@ angular.module('internApp', ['ui.bootstrap', 'ngRoute'])
 }])
 
 .controller('HomeController', ['$scope', '$location', '$uibModal', 'apiService', function($scope, $location, $uibModal, apiService) {
+	$scope.username = apiService.username;
+
 	$scope.signOut = function() {
         apiService.logout(
         	function(response) {	$location.path('/');	},	// success handling
@@ -201,7 +212,7 @@ angular.module('internApp', ['ui.bootstrap', 'ngRoute'])
 		apiService.deleteNote(note_id, function() {
 
 			var index = $scope.notes.findIndex(function(note) {
-				return note_id == note.id
+				return note_id === note.id
 			});
 
 			$scope.notes.splice(index, 1);
@@ -226,7 +237,7 @@ angular.module('internApp', ['ui.bootstrap', 'ngRoute'])
 	$scope.updateNote = function(note) {
 		apiService.updateNote(note, function(response) {
 			var index = $scope.notes.findIndex(function(tsk) {
-				return tsk.id == note.id
+				return tsk.id === note.id
 			});
 
 			$scope.notes[index] = note;
@@ -243,11 +254,11 @@ angular.module('internApp', ['ui.bootstrap', 'ngRoute'])
 			templateUrl: 'templates/createModal.html',
 
 			controller: function($scope) {
-				$scope.header = "Add a Note"
+				$scope.header = "Add a Note";
 
 				$scope.dismiss = function() {
 					modalInstance.close()
-				}
+				};
 
 				$scope.handleNote = function() {
 					parentScope.createNote({
