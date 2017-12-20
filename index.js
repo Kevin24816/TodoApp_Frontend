@@ -15,15 +15,17 @@ angular.module('internApp', ['ui.bootstrap', 'ngRoute'])
 				"Authorization": "Bearer " + this.getToken()
 			};
 		},
+
 		deleteToken: function() {
 			localStorage.removeItem("token");
 		}
-	}
+	};
 
 	return authService;
 })
 .factory('apiService', ['authService', '$http', function(authService, $http) {
 	var baseURL = "https://todoapp248.herokuapp.com/";
+    // var baseURL = "http://TodoApp.test"; // local testing url
 
 	var apiService = {
 		//  No auth
@@ -33,7 +35,7 @@ angular.module('internApp', ['ui.bootstrap', 'ngRoute'])
 				url: baseURL + "/auth",
 				data: data
 			}).then(function(response) {
-				authService.setToken(response.data.token)
+				authService.setToken(response.data.token);
 				successHandler(response);
 			}, function(response) {
 				errorHandler(response);
@@ -47,7 +49,7 @@ angular.module('internApp', ['ui.bootstrap', 'ngRoute'])
 				url: baseURL + "/users",
 				data: data
 			}).then(function(response) {
-				authService.setToken(response.data.token)
+				authService.setToken(response.data.token);
 				successHandler(response)
 			}, function(response) {
 				errorHandler(response);
@@ -58,7 +60,8 @@ angular.module('internApp', ['ui.bootstrap', 'ngRoute'])
 		logout: function(successHandler, errorHandler) {
 			$http({
 				method: 'DELETE',
-				url: baseURL + "/auth"
+				url: baseURL + "/auth",
+                headers: authService.generateHeader()
 			}).then(function(response) {
 				successHandler(response)
 			}, function(response) {
@@ -70,14 +73,14 @@ angular.module('internApp', ['ui.bootstrap', 'ngRoute'])
 			$http({
 				method: 'GET',
 				url: baseURL + "/notes",
-				headers: authService.generateHeader(),
+				headers: authService.generateHeader()
 			}).then(function(response) {
 
 				var notes = response.data.notes;
 				//  Javascript sucks
 				for (var i = 0; i < notes.length; i++) {
-					notes[i].completed = notes[i].completed == 1;
-				};
+					notes[i].completed = notes[i].completed === 1;
+				}
 
 				successHandler(notes)
 			}, function(response) {
@@ -115,17 +118,18 @@ angular.module('internApp', ['ui.bootstrap', 'ngRoute'])
 			$http({
 				method: 'DELETE',
 				url: baseURL + "/notes/" + noteId,
-				headers: authService.generateHeader(),
+				headers: authService.generateHeader()
 			}).then(function(response) {
 				successHandler()
 			}, function(response) {
 				errorHandler(response);
 			});
 		}
-	}
+	};
 
 	return apiService;
 }])
+
 .controller('SignInController', ['$scope', '$location', 'apiService', function($scope, $location, apiService) {
 
 	$scope.register = function() {
@@ -134,7 +138,7 @@ angular.module('internApp', ['ui.bootstrap', 'ngRoute'])
 		}, function(response) {
 			console.log(response);
 		})
-	}
+	};
 
 	$scope.signIn = function() {
 		apiService.authenticate($scope.login, function(response) {
@@ -144,7 +148,16 @@ angular.module('internApp', ['ui.bootstrap', 'ngRoute'])
 		})
 	}
 }])
+
 .controller('HomeController', ['$scope', '$location', '$uibModal', 'apiService', function($scope, $location, $uibModal, apiService) {
+    // TODO: fix signOut
+	$scope.signOut = function() {
+        apiService.logout(
+        	function(response) {	$location.path('/');	},	// success handling
+			function(response) {	console.log(response);		}	// error handling
+		)
+    };
+
 	apiService.getNotes(function (notes) {
 		$scope.notes = notes;
 	}, function(response) {
@@ -164,7 +177,7 @@ angular.module('internApp', ['ui.bootstrap', 'ngRoute'])
 
 				$scope.dismiss = function() {
 					modalInstance.close()
-				}
+				};
 
 				$scope.handleNote = function() {
 					$scope.note.title = $scope.title;
@@ -175,7 +188,7 @@ angular.module('internApp', ['ui.bootstrap', 'ngRoute'])
 				}
 			}
 	    });
-	}
+	};
 
 	$scope.toggleComplete = function(note) {
 		apiService.updateNote(note, function() {
@@ -183,7 +196,7 @@ angular.module('internApp', ['ui.bootstrap', 'ngRoute'])
 		}, function() {
 			//note.completed = !note.completed;
 		})
-	}
+	};
 
 	$scope.removeNote = function(note_id) {
 		apiService.deleteNote(note_id, function() {
@@ -196,7 +209,7 @@ angular.module('internApp', ['ui.bootstrap', 'ngRoute'])
 		}, function(response) {
 			console.log("failed to delete note");
 		})
-	}
+	};
 
 	$scope.createNote = function(note) {
 	
@@ -209,7 +222,7 @@ angular.module('internApp', ['ui.bootstrap', 'ngRoute'])
 		}, function(response) {
 			console.log(response);
 		})
-	}
+	};
 
 	$scope.updateNote = function(note) {
 		apiService.updateNote(note, function(response) {
@@ -221,7 +234,7 @@ angular.module('internApp', ['ui.bootstrap', 'ngRoute'])
 		}, function(response) {
 			console.log(response);
 		});
-	}
+	};
 
 	$scope.addNote = function() {
 		//  Not sure this is kosher
