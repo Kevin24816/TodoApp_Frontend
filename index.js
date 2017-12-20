@@ -150,7 +150,6 @@ angular.module('internApp', ['ui.bootstrap', 'ngRoute'])
 }])
 
 .controller('HomeController', ['$scope', '$location', '$uibModal', 'apiService', function($scope, $location, $uibModal, apiService) {
-    // TODO: fix signOut
 	$scope.signOut = function() {
         apiService.logout(
         	function(response) {	$location.path('/');	},	// success handling

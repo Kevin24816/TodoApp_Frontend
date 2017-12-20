@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4a31a17-b6b1-4c4c-bce9-69e8d242f6c3" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/index.js" afterPath="$PROJECT_DIR$/index.js" />
-      <change beforePath="$PROJECT_DIR$/templates/home.html" afterPath="$PROJECT_DIR$/templates/home.html" />
-      <change beforePath="$PROJECT_DIR$/templates/register.html" afterPath="$PROJECT_DIR$/templates/register.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,8 +17,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="27" column="64" lean-forward="false" selection-start-line="27" selection-start-column="64" selection-end-line="27" selection-end-column="64" />
+            <state relative-caret-position="613">
+              <caret line="151" column="133" lean-forward="false" selection-start-line="151" selection-start-column="133" selection-end-line="151" selection-end-column="133" />
               <folding>
                 <element signature="e#2201#2452#0" expanded="false" />
                 <element signature="e#2518#2782#0" expanded="false" />
@@ -152,12 +149,20 @@
       <option name="presentableId" value="Default" />
       <updated>1513760447464</updated>
       <workItem from="1513760448525" duration="34000" />
-      <workItem from="1513760679205" duration="2468000" />
+      <workItem from="1513760679205" duration="2493000" />
     </task>
+    <task id="LOCAL-00001" summary="added logout service">
+      <created>1513763185802</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1513763185802</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2502000" />
+    <option name="totallyTimeSpent" value="2527000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -188,6 +193,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added logout service" />
+    <option name="LAST_COMMIT_MESSAGE" value="added logout service" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -227,8 +236,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="64" lean-forward="false" selection-start-line="27" selection-start-column="64" selection-end-line="27" selection-end-column="64" />
+        <state relative-caret-position="613">
+          <caret line="151" column="133" lean-forward="false" selection-start-line="151" selection-start-column="133" selection-end-line="151" selection-end-column="133" />
           <folding>
             <element signature="e#2201#2452#0" expanded="false" />
             <element signature="e#2518#2782#0" expanded="false" />
