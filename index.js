@@ -78,6 +78,18 @@ angular.module('internApp', ['ui.bootstrap', 'ngRoute'])
 			});
 		},
 
+        deleteAccount: function(successHandler, errorHandler) {
+            $http({
+                method: 'DELETE',
+                url: baseURL + "/users",
+                headers: authService.generateHeader()
+            }).then(function(response) {
+                successHandler(response)
+            }, function(response) {
+                errorHandler(response);
+            });
+        },
+
 		getNotes: function(successHandler, errorHandler) {
 			$http({
 				method: 'GET',
@@ -166,6 +178,13 @@ angular.module('internApp', ['ui.bootstrap', 'ngRoute'])
         	function(response) {	$location.path('/');	},	// success handling
 			function(response) {	console.log(response);		}	// error handling
 		)
+    };
+
+    $scope.deleteAccount = function() {
+        apiService.deleteAccount(
+            function(response) {	$location.path('/');	},	// success handling
+            function(response) {	console.log(response);		}	// error handling
+        )
     };
 
 	apiService.getNotes(function (notes) {
