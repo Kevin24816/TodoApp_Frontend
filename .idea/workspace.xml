@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d4a31a17-b6b1-4c4c-bce9-69e8d242f6c3" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/templates/register.html" afterPath="$PROJECT_DIR$/templates/register.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -13,11 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="53">
-              <caret line="29" column="53" lean-forward="true" selection-start-line="29" selection-start-column="53" selection-end-line="29" selection-end-column="53" />
+              <caret line="29" column="53" lean-forward="false" selection-start-line="29" selection-start-column="53" selection-end-line="29" selection-end-column="53" />
               <folding>
                 <element signature="e#2377#2770#0" expanded="false" />
                 <element signature="e#2836#3086#0" expanded="false" />
@@ -44,7 +45,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="register.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="register.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/register.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="315">
@@ -94,8 +95,8 @@
       <list>
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/templates/home.html" />
-        <option value="$PROJECT_DIR$/templates/register.html" />
         <option value="$PROJECT_DIR$/index.js" />
+        <option value="$PROJECT_DIR$/templates/register.html" />
       </list>
     </option>
   </component>
@@ -142,8 +143,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -182,7 +183,8 @@
       <updated>1513760447464</updated>
       <workItem from="1513760448525" duration="34000" />
       <workItem from="1513760679205" duration="11093000" />
-      <workItem from="1513815339294" duration="2039000" />
+      <workItem from="1513815339294" duration="2064000" />
+      <workItem from="1513820506532" duration="61000" />
     </task>
     <task id="LOCAL-00001" summary="added logout service">
       <created>1513763185802</created>
@@ -233,11 +235,25 @@
       <option name="project" value="LOCAL" />
       <updated>1513816848437</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="fixed username display">
+      <created>1513817814772</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1513817814772</updated>
+    </task>
+    <task id="LOCAL-00009" summary="fixed username display">
+      <created>1513820573386</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1513820573387</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13166000" />
+    <option name="totallyTimeSpent" value="13252000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -282,6 +298,44 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#2377#2770#0" expanded="false" />
+            <element signature="e#2836#3086#0" expanded="false" />
+            <element signature="e#3152#3416#0" expanded="false" />
+            <element signature="e#3480#3714#0" expanded="false" />
+            <element signature="e#5241#5819#0" expanded="false" />
+            <element signature="e#5862#5975#0" expanded="false" />
+            <element signature="e#6017#6268#0" expanded="false" />
+            <element signature="e#6307#6516#0" expanded="false" />
+            <element signature="e#6555#6791#0" expanded="false" />
+            <element signature="e#6823#7302#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="8" lean-forward="false" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="8" lean-forward="true" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
+          <folding>
+            <element signature="n#style#0;n#label#2;n#form#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#2;n#form#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -353,13 +407,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/register.html">
+    <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="8" lean-forward="true" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
+        <state relative-caret-position="53">
+          <caret line="29" column="53" lean-forward="false" selection-start-line="29" selection-start-column="53" selection-end-line="29" selection-end-column="53" />
           <folding>
-            <element signature="n#style#0;n#label#2;n#form#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#2;n#form#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#2377#2770#0" expanded="false" />
+            <element signature="e#2836#3086#0" expanded="false" />
+            <element signature="e#3152#3416#0" expanded="false" />
+            <element signature="e#3480#3714#0" expanded="false" />
+            <element signature="e#5241#5819#0" expanded="false" />
+            <element signature="e#5862#5975#0" expanded="false" />
+            <element signature="e#6017#6268#0" expanded="false" />
+            <element signature="e#6307#6516#0" expanded="false" />
+            <element signature="e#6555#6791#0" expanded="false" />
+            <element signature="e#6823#7302#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -372,21 +434,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.js">
+    <entry file="file://$PROJECT_DIR$/templates/register.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="53">
-          <caret line="29" column="53" lean-forward="true" selection-start-line="29" selection-start-column="53" selection-end-line="29" selection-end-column="53" />
+        <state relative-caret-position="315">
+          <caret line="21" column="8" lean-forward="true" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
           <folding>
-            <element signature="e#2377#2770#0" expanded="false" />
-            <element signature="e#2836#3086#0" expanded="false" />
-            <element signature="e#3152#3416#0" expanded="false" />
-            <element signature="e#3480#3714#0" expanded="false" />
-            <element signature="e#5241#5819#0" expanded="false" />
-            <element signature="e#5862#5975#0" expanded="false" />
-            <element signature="e#6017#6268#0" expanded="false" />
-            <element signature="e#6307#6516#0" expanded="false" />
-            <element signature="e#6555#6791#0" expanded="false" />
-            <element signature="e#6823#7302#0" expanded="false" />
+            <element signature="n#style#0;n#label#2;n#form#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#2;n#form#1;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
