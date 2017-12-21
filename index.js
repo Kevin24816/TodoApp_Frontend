@@ -153,10 +153,14 @@ angular.module('internApp', ['ui.bootstrap', 'ngRoute'])
 
 .controller('SignInController', ['$scope', '$location', 'apiService', function($scope, $location, apiService) {
 
+	$scope.sign_up_status = "";
+    $scope.sign_in_status = "";
+
 	$scope.register = function() {
 		apiService.createUser($scope.user, function(response) {
 			$location.path('/home');
 		}, function(response) {
+            $scope.sign_up_status = "Username is taken or password mismatches.";
 			console.log(response);
 		})
 	};
@@ -165,6 +169,7 @@ angular.module('internApp', ['ui.bootstrap', 'ngRoute'])
 		apiService.authenticate($scope.login, function(response) {
 			$location.path('/home');
 		}, function(response) {
+            $scope.sign_in_status = "Username or password is incorrect. Please try again.";
 			console.log(response);
 		})
 	}

@@ -8,6 +8,7 @@
 		<input type="password" class="form-control" placeholder="Password" ng-model="user.password">
 		<input type="password" class="form-control" placeholder="Confirm password" ng-model="user.password_confirmation">
 		<button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="register()">Sign up</button>
+		<label class="signUpStatus" style="color:red;"> {{ sign_up_status }} </label>
 	</form>
 	<h2>Sign in</h2>
     <form class="">
@@ -16,5 +17,6 @@
 		<label class="sr-only">Password</label>
 		<input type="password" class="form-control" placeholder="Password" ng-model="login.password">
 		<button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="signIn()">Sign in</button>
+		<label class="signInStatus" style="color:red;">  {{ sign_in_status }} </label>
 	</form>
 </div>	
