@@ -40,8 +40,7 @@ angular.module('internApp', ['ui.bootstrap', 'ngRoute'])
 				url: baseURL + "/auth",
 				data: data
 			}).then(function(response) {
-                localStorage.setItem("username", response.data.username);
-
+				apiService.username = response.data.username;
 				authService.setToken(response.data.token);
 				successHandler(response);
 			}, function(response) {
@@ -56,8 +55,7 @@ angular.module('internApp', ['ui.bootstrap', 'ngRoute'])
 				url: baseURL + "/users",
 				data: data
 			}).then(function(response) {
-                localStorage.setItem("username", response.data.username);
-
+                apiService.username = response.data.username;
 				authService.setToken(response.data.token);
 				successHandler(response)
 			}, function(response) {
@@ -72,6 +70,7 @@ angular.module('internApp', ['ui.bootstrap', 'ngRoute'])
 				url: baseURL + "/auth",
                 headers: authService.generateHeader()
 			}).then(function(response) {
+                apiService.username = "";
 				successHandler(response)
 			}, function(response) {
 				errorHandler(response);
